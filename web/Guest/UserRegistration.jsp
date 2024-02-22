@@ -98,7 +98,7 @@
                     </td>   
                 </tr>
                 <tr>
-<td>Password</td>
+                    <td>Password</td>
                     <td><input type="password" name="password" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
                 </tr>
                 <tr>
