@@ -16,8 +16,8 @@
         <a href="MyProfile.jsp">PROFILE</a><br>
         <a href="EditProfile.jsp">EDIT PROFILE</a><br>
         <a href="ChangePassword.jsp">CHANGE PASSWORD</a><br>
-        <a href="Review.jsp">Review Shop</a><br>
-        <a href="complaint.jsp">file a Complaint</a><br>
+        <a href="review.jsp">REVIEW A SHOP</a><br>
+        <a href="complaint.jsp">file a Complaint</a>
         <a href="Feedback.jsp">Provide Feedback</a>
     </body>
 </html>

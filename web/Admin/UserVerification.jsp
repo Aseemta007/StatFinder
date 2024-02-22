@@ -1,7 +1,7 @@
 <%-- 
     Document   : Userverification
     Created on : 11 Jan, 2024, 2:07:56 PM
-    Author     : aseem
+    Author     : ananthu
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,7 +11,7 @@
     <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>User Verification</title>
+        <title>JSP Page</title>
     </head>
     <body>
          <%

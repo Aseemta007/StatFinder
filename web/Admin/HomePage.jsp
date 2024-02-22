@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Admin Dashboard</title>
     </head>
-    <body>hi
+    <body>
         <h1>Hello <%=session.getAttribute("adname")%></h1>
         <a href="ChangePassword.jsp">CHANGE PASSWORD</a><br>
         <a href="district.jsp">SET DISTRICT</a><br>
@@ -19,5 +19,7 @@
         <a href="location.jsp">SET LOCATION</a><br>
         <a href="category.jsp">SET CATEGORY</a><br>
         <a href="subcategory.jsp">SET SUB CATEGORY</a><br>
+        <a href="reviewverification.jsp">verify Reviews</a><br>
+        <a href="ComplaintVerification.jsp">Verify Complaints</a>
     </body>
 </html>

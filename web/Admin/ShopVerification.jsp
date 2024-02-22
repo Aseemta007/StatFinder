@@ -11,7 +11,7 @@
     <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Shop Verification</title>
+        <title>JSP Page</title>
     </head>
     <body>
          <%

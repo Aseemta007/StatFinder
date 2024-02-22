@@ -1,7 +1,7 @@
 <%-- 
     Document   : AjaxCat
-    Created on : 18 Jan, 2024, 2:42:34 PM
-    Author     : aseem
+    Created on : Jan 18, 2024, 2:40:26 PM
+    Author     : ANANTHU
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,7 +11,7 @@
     String selq="select *from tbl_subcategory where category_id = '"+request.getParameter("cid")+"'"; /*According to the location id the ward id is fetched*/
     ResultSet rs = con.selectCommand(selq);
     %>
-     <option>--select Sub Category--</option>
+     <option>--select Sub category--</option>
      <%
     while(rs.next())
     {

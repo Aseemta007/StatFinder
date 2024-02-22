@@ -98,12 +98,12 @@
                     </td>   
                 </tr>
                 <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password"  placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
+<td>Password</td>
+                    <td><input type="password" name="password" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
                 </tr>
                 <tr>
-                    <td>Confirm Password</td>
-                    <td><input type="password" name="cpassword"placeholder="ReEnter Password" required></td>
+                   <td>Confirm Password</td>
+                    <td><input type="password" name="cpassword" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center"><input type="submit" name="btn_register" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset"></td> 

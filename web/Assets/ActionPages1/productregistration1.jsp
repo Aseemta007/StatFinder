@@ -100,14 +100,15 @@
                     }
 
                 }
-                String str1 = "insert into tbl_product(subcategory_id,product_name,product_image,product_details,product_price,shop_id)"
-                        + "values('" + value[1] + "','" + value[2] + "','" + img +  "','" + value[3] + "','" + value[4] + "','" + session.getAttribute("shid")+ "')";
-
-                System.out.println(str1);       
-
-                boolean status = con.executeCommand(str1);
-
-                if (status == true) {
+                 
+            if(request.getParameter("Save")!=null)
+            {
+                if(request.getParameter("txtid")=="")
+                {
+                 String str1 = "insert into tbl_product(subcategory_id,product_name,product_image,product_details,product_price,shop_id)"
+                        + "values('" + value[1] + "','" + value[2] + "','" + img +  "','" + value[3] + "','" + value[4] + "',0)";
+                 boolean status = con.executeCommand(str1);
+                  if (status == true) {
         %>
         <script type="text/javascript" >
             alert("Upload Successfully..");
@@ -129,6 +130,38 @@
                     </script>
                     <%
                 }
+                 
+                 
+                }
+                else
+                {
+                    String upqry="update tbl_product set subcategory_id='"+value[1]+"',product_name='"+value[2]+"',product_details='"+value[3]+"',product_price='"+value[4]+"'where product_id='"+request.getParameter("txtid")+"'";
+                    
+                    con.executeCommand(upqry);
+                    response.sendRedirect("ProductRegistration.jsp");
+                }
+                
+                
+            }
+             if(request.getParameter("did")!=null)
+            {
+                String delqry="delete from tbl_product where product_id='"+request.getParameter("did")+"'";
+                con.executeCommand(delqry);
+                response.sendRedirect("product.jsp");
+            }
+             String editid="";
+             String editname="";
+             if(request.getParameter("eid")!=null)
+             {
+                 String selqry1="select * from tbl_product where product_id ='"+request.getParameter("eid")+"'";
+                 ResultSet rs1=con.selectCommand(selqry1);
+                 rs1.next();
+                 editid=rs1.getString("product_id");
+                 editname=rs1.getString("product_name");
+                     
+             }
+             
+        
 
             }
 

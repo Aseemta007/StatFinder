@@ -1,4 +1,9 @@
 <%-- 
+    Document   : review
+    Created on : Jan 23, 2024, 11:23:03 AM
+    Author     : ANANTHU
+--%>
+<%-- 
     Document   : Review
     Created on : 4 Jan, 2024, 11:03:32 AM
     Author     : aseem
@@ -102,7 +107,7 @@
                 <td><%=res.getString("shop_name")%></td>
                 <td><%=res.getString("user_rating")%></td>
                 <td><%=res.getString("user_review")%></td>
-                <td><a href="Review.jsp?del=<%=res.getString("review_id")%>">Delete</a></td>
+                <td><a href="review.jsp?del=<%=res.getString("review_id")%>">Delete</a></td>
             </tr>
             <%
                 }

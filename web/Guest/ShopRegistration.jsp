@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                     <td>Shop Email</td>
-                    <td><input type="email" name="shopemail" placeholder="Enter Email-Id" required></td>
+                    <td><input type="text" name="shopemail" placeholder="Enter Email-Id" required></td>
                 </tr>
                 <tr>
                     <td>Shop Address</td>
@@ -97,11 +97,11 @@
                         </select>
                 </tr>
                 <tr>
-                    <td>Shop password</td>
+                   <td>Password</td>
                     <td><input type="password" name="shoppassword" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
                 </tr>
                 <tr>
-                    <td>Confirm password</td>
+                   <td>Confirm Password</td>
                     <td><input type="password" name="shoppassword" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
                 </tr>
                 <tr>
