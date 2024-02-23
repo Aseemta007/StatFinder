@@ -13,10 +13,14 @@
     </head>
     <body>
         <h1>Hello <%=session.getAttribute("shname")%></h1>
-        <a href="MyProfile.jsp">PROFILE</a><br>
-        <a href="EditProfile.jsp">EDIT PROFILE</a><br>
-        <a href="ChangePassword.jsp">CHANGE PASSWORD</a><br>
+        <a href="MyProfile.jsp">Profile</a><br>
+        <a href="EditProfile.jsp">Edit Profile</a><br>
+        <a href="ChangePassword.jsp">Change Password</a><br>
         <a href="ProductRegistration.jsp">Register Products</a><br>
-        <a href="productdisplay.jsp">Display Products</a>
+        <a href="productdisplay.jsp">Display Products</a><br>
+        <a href="ReviewDisplay.jsp">Display Reviews</a><br>
+        <a href="Complaintdisplay.jsp">Display Complaints</a><br>
+
+
     </body>
 </html>

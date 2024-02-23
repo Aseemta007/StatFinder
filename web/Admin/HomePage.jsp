@@ -20,6 +20,8 @@
         <a href="category.jsp">SET CATEGORY</a><br>
         <a href="subcategory.jsp">SET SUB CATEGORY</a><br>
         <a href="reviewverification.jsp">verify Reviews</a><br>
-        <a href="ComplaintVerification.jsp">Verify Complaints</a>
+        <a href="ComplaintVerification.jsp">Verify Complaints</a><br>
+        <a href="Complaintaction.jsp">View Complaints</a><br>
+
     </body>
 </html>
