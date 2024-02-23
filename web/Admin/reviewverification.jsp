@@ -53,7 +53,7 @@
                     <td><%=rs.getString("review_datetime")%></td>
                     <td><%=rs.getString("user_name")%></td>
                     <td><%=rs.getString("shop_name")%></td>
-                    <td><a href="ReviewVerification.jsp?aid=<%=rs.getString("review_id")%>">Accept</a>|<a href="ReviewVerification.jsp?rid=<%=rs.getString("review_id")%>">reject</a></td>
+                    <td><a href="reviewverification.jsp?aid=<%=rs.getString("review_id")%>">Accept</a>|<a href="reviewverification.jsp?rid=<%=rs.getString("review_id")%>">reject</a></td>
                     <td>
             <%
              if (rs.getInt("review_vstate")==0)//property table ill illa
@@ -62,11 +62,11 @@
                  }
             else if (rs.getInt("review_vstate")==2)
                  {
-                   out.println("Review is accepted");
+                   out.println("Review Rejected");
                  }
             else if (rs.getInt("review_vstate")==3)
                  {
-                   out.println("Review is rejected");
+                   out.println("Review Unverified");
                  }
             
             %>
