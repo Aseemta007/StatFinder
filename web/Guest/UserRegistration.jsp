@@ -66,17 +66,7 @@
                     <td>Place</td>
                     <td><select name="place" id="selplace" onchange = "getPlace(this.value)"> <!--Here onchange triggers the function getDist()-->
                             <option>--select Place--</option>
-                            <%
-                                String sel2 = "select*from tbl_place";  /*Here data from table location is fecthed*/
-
-                                ResultSet rs2 = con.selectCommand(sel2); /*Here there select query is exectued into ResultSet array*/
-
-                                while (rs2.next()) /*Using while loop we iterate every values in the array and pass the value into Drop down list*/ {
-                            %>
-                            <option value="<%=rs2.getString("place_id")%>"><%=rs2.getString("place_name")%></option> <!--Values from -->
-                            <%
-                                }
-                            %>
+                           
                         </select>
                     </td>
                 </tr>

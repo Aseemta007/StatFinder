@@ -11,7 +11,7 @@
     String selq="select *from tbl_subcategory where category_id = '"+request.getParameter("cid")+"'"; /*According to the location id the ward id is fetched*/
     ResultSet rs = con.selectCommand(selq);
     %>
-     <option>--select Sub category--</option>
+    <option value="">--select Sub category--</option>
      <%
     while(rs.next())
     {

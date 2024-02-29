@@ -11,7 +11,7 @@
     String selq="select *from tbl_place where district_id = '"+request.getParameter("did")+"'"; /*According to the location id the ward id is fetched*/
     ResultSet rs = con.selectCommand(selq);
     %>
-     <option>--select Place--</option>
+    <option value="">--select Place--</option>
      <%
     while(rs.next())
     {
