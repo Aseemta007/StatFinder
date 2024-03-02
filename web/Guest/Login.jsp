@@ -12,7 +12,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ItemFinder::Login</title>
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/Login.css">
     </head>
+    <%@include file="Head.jsp" %>
     <%
     
         if(request.getParameter("btn_login")!=null)
@@ -63,27 +65,30 @@
     %>
     <body>
         <form method="post">
-            <table border="3" align="center">
-                <tr>
-                    <td>Email</td>
-                    <td><input type="email" name="txt_email" placeholder="Enter email_id" required></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="txt_password" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
-                </tr>    
-                <tr>
-                    <td align="center" colspan="2">
-                        <input type="submit" name="btn_login" value="Login">
-                        <input type="reset" name="txtcancel" value="Cancel">
-                    </td>
-                </tr>   
-                <tr>
-                    <td colspan="2" align="center">
-                        <a href="ShopRegistration.jsp">NewShop</a>/<a href="UserRegistration.jsp">NewUser</a>
-                    </td>
-                </tr>
-            </table>
+          <div class="ring">
+  <i style="--clr:#00ff0a;"></i>
+  <i style="--clr:#ff0057;"></i>
+  <i style="--clr:#fffd44;"></i>
+  <div class="login">
+    <h2>Login</h2>
+    <div class="inputBx">
+      <input type="text" id="txt_email" name="txt_email" placeholder="Email">
+    </div>
+    <div class="inputBx">
+      <input type="password" id="txt_password" name="txt_password" placeholder="Password">
+    </div>
+    <div class="inputBx">
+      <input type="submit" name="btn_login" value="Sign in">
+    </div>
+    <div class="links">
+      <a href="#">Forget Password</a>
+      <a href="#">Signup</a>
+    </div>
+  </div>
+</div>  
         </form>    
     </body>
+    <%@include file="Foot.jsp" %>
 </html>
+
+
