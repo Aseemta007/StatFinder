@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Assets/Templates/Main/css/footstyle.css</file>
-            <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Guest/Foot.jsp</file>
-            <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Guest/Head.jsp</file>
-            <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/index.html</file>
-            <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Assets/Templates/Main/css/style.css</file>
-            <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Guest/Login.jsp</file>
-            <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Assets/Templates/Main/css/Login.css</file>
-            <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/User/Search.jsp</file>
+            <file>file:/E:/StatFinder/web/Guest/ShopRegistration.jsp</file>
+            <file>file:/E:/StatFinder/web/User/Search.jsp</file>
+            <file>file:/E:/StatFinder/web/Shop/ProductRegistration.jsp</file>
+            <file>file:/E:/StatFinder/web/Admin/reviewverification.jsp</file>
+            <file>file:/E:/StatFinder/web/index.html</file>
+            <file>file:/E:/StatFinder/web/Admin/Complaintaction.jsp</file>
         </group>
     </open-files>
 </project-private>
