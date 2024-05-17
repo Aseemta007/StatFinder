@@ -6,7 +6,6 @@
 
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
-   <tr>
     <%
         String did = request.getParameter("dsid");
         String pid = request.getParameter("plid");
@@ -39,7 +38,7 @@
     %>
 <div class="col-md-4 mb-4">
     <div class="card h-100">
-        <img src="../Files/ProductImage/<%=rs5.getString("product_image")%>" class="card-img-top" alt="<%=rs5.getString("product_name")%>">
+        <img src="../Assets/Files/ProductImage/<%=rs5.getString("product_image")%>" class="card-img-top" alt="<%=rs5.getString("product_name")%>">
         <div class="card-body">
             <h5 class="card-title"><%=rs5.getString("product_name")%></h5>
             <p class="card-text"><%=rs5.getString("product_details")%></p>
