@@ -62,7 +62,7 @@
                  }
             else if (rs.getInt("review_vstate")==2)
                  {
-                   out.println("Review Rejected");
+                   out.println("Review Verified");
                  }
             else if (rs.getInt("review_vstate")==3)
                  {
