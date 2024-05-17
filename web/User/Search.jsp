@@ -8,6 +8,7 @@
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="Head.jsp" %>
+<%@include file="Head.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +17,76 @@
     </head>
     <body onload="getProd()">
         <div class="container my-4" style="width:700px;">
+        <div class="container my-4" style="width:700px;">
         <form>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group row mb-3">
+                        <label for="seldist" class="col-sm-2 col-form-label">District</label>
+                        <div class="col-sm-10">
+                            <select name="rgdist" id="seldist" class="form-control" onchange="getDist(this.value),getProd()">
+                                <option value="">--select District--</option>
+                                <%
+                                    String sel = "select*from tbl_district";
+                                    ResultSet rs = con.selectCommand(sel);
+                                    while (rs.next()) {
+                                %>
+                                <option value="<%=rs.getString("district_id")%>"><%=rs.getString("district_name")%></option>
+                                <%
+                                    }
+                                %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="selplace" class="col-sm-2 col-form-label">Place</label>
+                        <div class="col-sm-10">
+                            <select name="place" id="selplace" class="form-control" onchange="getPlace(this.value),getProd()">
+                                <option value="">--select Place--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="selLoc" class="col-sm-2 col-form-label">Location</label>
+                        <div class="col-sm-10">
+                            <select name="location" id="selLoc" class="form-control">
+                                <option value="">----select Location----</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="selcat" class="col-sm-2 col-form-label">Category</label>
+                        <div class="col-sm-10">
+                            <select name="rgcat" id="selcat" class="form-control" onchange="getCat(this.value),getProd()">
+                                <option value="">--select Category--</option>
+                                <%
+                                    String sel1 = "select*from tbl_category";
+                                    ResultSet rs1 = con.selectCommand(sel1);
+                                    while (rs1.next()) {
+                                %>
+                                <option value="<%=rs1.getString("category_id")%>"><%=rs1.getString("category_name")%></option>
+                                <%
+                                    }
+                                %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="selscat" class="col-sm-2 col-form-label">Sub category</label>
+                        <div class="col-sm-10">
+                            <select name="subcategory" id="selscat" class="form-control" onchange="getProd()">
+                                <option value="">----select Sub category----</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="selpn" class="col-sm-2 col-form-label">Product Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="product_name" id="selpn" class="form-control" onkeyup="getProd()" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="card">
                 <div class="card-body">
                     <div class="form-group row mb-3">
@@ -154,4 +224,5 @@
 
 
 </html>
+<%@include file="Foot.jsp" %>
 <%@include file="Foot.jsp" %>

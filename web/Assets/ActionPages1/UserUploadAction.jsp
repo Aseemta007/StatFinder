@@ -109,7 +109,7 @@
         <script type="text/javascript" >
             alert("Upload Successfully..");
             setTimeout(function() {
-                window.location.href = '../../Guest/UserRegistration.jsp'
+                window.location.href = '../../Guest/Login.jsp'
             }, 100);
         </script>
         <%
