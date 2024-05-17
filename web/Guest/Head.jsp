@@ -42,7 +42,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <a href="index.html"><img src="../../Assets/Templates/Main/img/logo.png" alt="" class="img-fluid" width="50" height="50"></a>
+        <a href="../index.html"><img src="../Assets/Templates/Main/img/logo.png" alt="" class="img-fluid" width="50" height="50"></a>
       </div>
 
       <nav id="navbar" class="navbar">

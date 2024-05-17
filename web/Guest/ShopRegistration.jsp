@@ -12,49 +12,131 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SELLER REGISTRATION</title>
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+                 <link rel="stylesheet" href="../Assets/Templates/Main/css/shopreg.css">
     </head>
+    <%@include file="../Shop/Shophead.jsp" %>
     <body>
-        <form method="post" enctype="multipart/form-data" action="../Assets/ActionPages1/ShopUploadAction.jsp">
-            <table border="1" align="center">
-                <tr>
-                    <td>Shop Name</td>
-                    <td><input type="text" name="shopname" placeholder="Enter ShopName" title="ShopName Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$" required></td>
-                </tr>
-                <tr>
-                    <td>Shop Email</td>
-                    <td><input type="text" name="shopemail" placeholder="Enter Email-Id" required></td>
-                </tr>
-                <tr>
-                    <td>Shop Address</td>
-                    <td>
-                        <textarea name="shopaddress" rows="6" cols="20" placeholder="Enter Address" required></textarea>
-                    </td>
-                </tr> 
-                <tr>
-                    <td>Shop Contact</td>
-                    <td><input type="text" name="shopcontact" placeholder="Enter Contact No" title="Phone number with 7-9 and remaing 9 digit with 0-9" pattern="[7-9]{1}[0-9]{9}" required></td>
-                </tr>
-                <tr>
-                    <td>Shop Owner name </td>
-                    <td><input type="text" name="shopownername"placeholder="Enter ShopOwnerName" title="ShopName Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$" required></td>
-                </tr>
-                <tr>
-                    <td>Shop Logo</td>
-                    <td>
-                        <input type="file" name="file_logo" required>
-                    </td>  
-                </tr>
-                <tr>
-                    <td>Shop Proof</td>
-                     <td>
-                        <input type="file" name="file_proof" required>
-                    </td>
-                </tr>
-                
-                <tr>
-                        <td>District</td>
-                        <td><select name="rgdist" onchange = "getDist(this.value)"> <!--Here onchange triggers the function getDist()-->
-                                <option>--select District--</option>
+     <div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" enctype="multipart/form-data" action="../Assets/ActionPages1/ShopUploadAction.jsp">
+      <div class="formbold-form-title">
+        <h2 class="">Shop Registration</h2>
+      </div>
+       
+      <div class="formbold-mb-3">
+        <div>
+          <label for="shopname" class="formbold-form-label">
+            Shop Name
+          </label>
+          <input 
+            name="shopname" 
+            placeholder="Enter ShopName" 
+            title="ShopName Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$"  
+            type="text"
+            id="shopname"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="formbold-mb-3">
+        <div>
+          <label for="shopemail" class="formbold-form-label"> Shop Email </label>
+          <input  
+            name="shopemail" 
+            placeholder="Enter Email-Id" 
+            type="email"
+            id="email"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+        </div>
+        
+        <div class="formbold-mb-3">
+        <label for="shopaddress" class="formbold-form-label">
+         Shop Address
+        </label>
+        <input 
+          name="shopaddress" 
+          placeholder="Enter Address"
+          type="text"
+          rows="4" 
+          cols="30"
+          id="address"
+          class="formbold-form-input"
+          required
+        />
+      </div>
+        
+         <div class="formbold-mb-3">
+        <div>
+          <label for="phone" class="formbold-form-label"> Phone number </label>
+          <input  
+            name="shopcontact"
+            placeholder="Enter Contact No" 
+            title="Phone number with 7-9 and remaing 9 digit with 0-9" 
+            pattern="[7-9]{1}[0-9]{9}" 
+            type="text"
+            id="contact"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>
+       
+      <div class="formbold-mb-3">
+        <div>
+          <label for="shopname" class="formbold-form-label">
+            Shop Owner Name
+          </label>
+          <input  
+            name="shopownername"
+            placeholder="Enter ShopOwnerName" 
+            title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$"  
+            type="text"
+            id="shopname"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>
+        
+        <div class="formbold-mb-3">
+        <label for="file_photo" class="formbold-form-label">
+          Shop Logo
+        </label>
+        <input  
+         type="file" 
+         name="file_logo" 
+          id="file_proof"
+          required
+        />
+      </div>
+        
+        <div class="formbold-mb-3">
+        <label for="file_photo" class="formbold-form-label">
+          Shop Proof
+        </label>
+        <input  
+         type="file" 
+         name="file_proof" 
+          id="file_proof"
+          required
+        />
+      </div>
+        
+        <div class="formbold-input-flex">
+            <div>
+        <label for="rgdist" class="formbold-form-label">
+            District
+            </label>
+  <select name="rgdist" onchange = "getDist(this.value)" class="formbold-form-input" >
+   <option>--select District--</option>
                             <%
                                 String sel = "select*from tbl_district";  /*Here data from table location is fecthed*/
 
@@ -67,49 +149,98 @@
                                 }
                             %>
                         </select>
+            </div>
+            </div>
+        
+        <div class="formbold-input-flex">
+            <div>
+        <label for="place" class="formbold-form-label">
+            Place
+            </label>
+  <select name="place" id="selplace" onchange = "getPlace(this.value)" class="formbold-form-input">
+    <option>--select Place--</option>
+  </select>
+            </div>
+            </div>
+        
+        <div class="formbold-input-flex">
+            <div>
+        <label for="location" class="formbold-form-label">
+            Location
+            </label>
+  <select name="location" id="selLoc" class="formbold-form-input" >
+    <option value="null">----select Location----</option>
+  </select>
+            </div>
+            </div>
 
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>Place</td>
-                    <td><select name="place" id="selplace" onchange = "getPlace(this.value)"> <!--Here onchange triggers the function getDist()-->
-                            <option>--select Place--</option>
-                            <%
-                                String sel2 = "select*from tbl_place";  /*Here data from table location is fecthed*/
 
-                                ResultSet rs2 = con.selectCommand(sel2); /*Here there select query is exectued into ResultSet array*/
+      <div class="formbold-mb-3">
+        <div>
+          <label for="password" class="formbold-form-label"> Password </label>
+          <input 
+              type="password" 
+              name="password" 
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            id="password"
+            class="formbold-form-input"
+            required
+          />
+        </div>   
+      </div>
 
-                                while (rs2.next()) /*Using while loop we iterate every values in the array and pass the value into Drop down list*/ {
-                            %>
-                            <option value="<%=rs2.getString("place_id")%>"><%=rs2.getString("place_name")%></option> <!--Values from -->
-                            <%
-                                }
-                            %>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td >Location</td>
-                    <td><select name="location" id="selLoc" >
-                            <option value="null">----select Location----</option>
+      <div class="formbold-mb-3">
+        <div>
+          <label for="cpassword" class="formbold-form-label"> Confirm Password </label>
+         <input 
+             type="password" 
+             name="cpassword" 
+             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            id="cpassword"
+            class="formbold-form-input"
+          />
+        </div>
+      </div>
 
-                        </select>
-                </tr>
-                <tr>
-                   <td>Password</td>
-                    <td><input type="password" name="shoppassword" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
-                </tr>
-                <tr>
-                   <td>Confirm Password</td>
-                    <td><input type="password" name="shoppassword" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required></td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset"</td>
-                </tr>
-            </table>
-        </form>
+      <div class="formbold-checkbox-wrapper">
+        <label for="supportCheckbox" class="formbold-checkbox-label">
+          <div class="formbold-relative">
+            <input
+              type="checkbox"
+              id="supportCheckbox"
+              class="formbold-input-checkbox"
+            />
+            <div class="formbold-checkbox-inner">
+              <span class="formbold-opacity-0">
+                <svg
+                  width="11"
+                  height="8"
+                  viewBox="0 0 11 8"
+                  fill="none"
+                  class="formbold-stroke-current"
+                >
+                  <path
+                    d="M10.0915 0.951972L10.0867 0.946075L10.0813 0.940568C9.90076 0.753564 9.61034 0.753146 9.42927 0.939309L4.16201 6.22962L1.58507 3.63469C1.40401 3.44841 1.11351 3.44879 0.932892 3.63584C0.755703 3.81933 0.755703 4.10875 0.932892 4.29224L0.932878 4.29225L0.934851 4.29424L3.58046 6.95832C3.73676 7.11955 3.94983 7.2 4.1473 7.2C4.36196 7.2 4.55963 7.11773 4.71406 6.9584L10.0468 1.60234C10.2436 1.4199 10.2421 1.1339 10.0915 0.951972ZM4.2327 6.30081L4.2317 6.2998C4.23206 6.30015 4.23237 6.30049 4.23269 6.30082L4.2327 6.30081Z"
+                    stroke-width="0.4"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          I agree to the defined
+          <a href="#"> terms, conditions, and policies</a>
+        </label>
+      </div>
+
+      <input type="submit" class="formbold-btn" name="btn_register" value="Register">&nbsp&nbsp<input type="reset" class="formbold-btn" name="btn_reset" value="Reset">
+    </form>
+  </div>
+</div>
     </body>
+    <%@include file="Foot.jsp" %>
     <script src="../Assets/JQuery/jQuery.js"></script> <!--The jQuery (Javascript Library) file in the specified directory is being processed here-->         
     <script>
                         function getDist(did) /*Here the function is being defined were parameter is being passed*/

@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ItemFinder::Login</title>
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
         <link rel="stylesheet" href="../Assets/Templates/Main/css/Login.css">
     </head>
     <%@include file="Head.jsp" %>
@@ -67,8 +68,8 @@
         <form method="post">
           <div class="ring">
   <i style="--clr:#00ff0a;"></i>
-  <i style="--clr:#ff0057;"></i>
-  <i style="--clr:#fffd44;"></i>
+  <i style="--clr:#F8FF00 ;"></i>
+  <i style="--clr:#00FFF6;"></i>
   <div class="login">
     <h2>Login</h2>
     <div class="inputBx">
@@ -81,9 +82,8 @@
       <input type="submit" name="btn_login" value="Sign in">
     </div>
     <div class="links">
-      <a href="#">Forget Password</a>
-      <a href="#">Signup</a>
-    </div>
+      <a href="UserRegistration.jsp" class="button-17">New User</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="ShopRegistration.jsp" class="button-17">New Shop</a>
   </div>
 </div>  
         </form>    

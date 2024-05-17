@@ -42,12 +42,12 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <a href="index.html"><img src="../../Assets/Templates/Main/img/logo.png" alt="" class="img-fluid" width="50" height="50"></a>
+        <a href="../index.html"><img src="../Assets/Templates/Main/img/user-logo.png" alt="" class="img-fluid" width="50" height="50"></a>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="../index.html">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
@@ -81,4 +81,9 @@
   <section id="zero">
     <div class="zero-container">
         <div class="dark-filter"></div>
+        <style>
+            .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #0fdbd4;
+}
+        </style>
         
