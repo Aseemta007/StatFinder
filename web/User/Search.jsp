@@ -8,7 +8,6 @@
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="Head.jsp" %>
-<%@include file="Head.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +15,6 @@
         <title>Search</title>
     </head>
     <body onload="getProd()">
-        <div class="container my-4" style="width:700px;">
         <div class="container my-4" style="width:700px;">
         <form>
             <div class="card">
@@ -165,6 +163,15 @@
             
         </div>
     </div>
+    </div>
+                            <div class="container my-4">
+        <div class="text-center mb-4">
+            <h1>Products</h1>
+        </div>
+        <div class="row" id="dataT">
+            
+        </div>
+    </div>
 
     </body>
     <script src="../Assets/JQuery/jQuery.js"></script> <!--The jQuery (Javascript Library) file in the specified directory is being processed here-->         
@@ -224,5 +231,4 @@
 
 
 </html>
-<%@include file="Foot.jsp" %>
 <%@include file="Foot.jsp" %>
