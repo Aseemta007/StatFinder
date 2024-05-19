@@ -11,31 +11,35 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>WorkGallery</title>
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/gallery.css">
     </head>
+    <%@include file="Shophead.jsp" %>
     <body>
-       
-        <form method="post" enctype="multipart/form-data" action="../Assets/ActionPages1/ProductGalleryUploadAction.jsp">
-            <table border="3" align="center">
-
-       <tr>
-                    <td>Gallery</td>
-                    <td align="center">
-                        <input required type="file" name="gallery">
-                        <input required type="text" name="productid" value="<%=request.getParameter("pid")%>" hidden>
+        <div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" enctype="multipart/form-data" action="../Assets/ActionPages1/ProductGalleryUploadAction.jsp">
+      <div class="formbold-form-title">
+        <h2 class="">Product Registration</h2>
+      </div>
+        <div class="formbold-mb-3">
+        <label for="gallery" class="formbold-form-label">
+          Photo
+        </label>
+        <input  
+         type="file" 
+         name="gallery" 
+          required
+        />
+        <input required type="text" name="productid" value="<%=request.getParameter("pid")%>" hidden>
                         <input required type="text" name="shopid" value="<%=session.getAttribute("shid")%>" hidden>
-                        
-                    </td>
-                     
-       </tr>
+      </div>
       
-       <tr>
-                    <td colspan="2" align="center">
-                        <input type="submit" name="save" value="Save">
-                        <input type="reset" name="cancel" value="Cancel">
-                    </td>
-                </tr>
-            </table>
-      </form>
+       <input type="submit" class="formbold-btn" name="save" value="Save">&nbsp&nbsp<input type="reset" class="formbold-btn" name="cancel" value="Cancel">
+    </form>
+  </div>
+</div> 
     
     </body>
+    <%@include file="Foot.jsp" %>
 </html>

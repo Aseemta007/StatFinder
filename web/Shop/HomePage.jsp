@@ -132,5 +132,5 @@
          </div>
       </div>
    </body>
-   <%@include file="../Guest/Foot.jsp" %>
+   <%@include file="Foot.jsp" %>
 </html>

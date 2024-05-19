@@ -44,13 +44,17 @@ and open the template in the editor.
     padding: 48px;
   }
 
-  .formbold-form-wrapper {
+   .formbold-form-wrapper {
     margin: 0 auto;
     max-width: 570px;
     width: 100%;
     //background: white;
     padding: 40px;
-    background: rgba(255,255,255,0.04);
+  overflow: hidden;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   }
 
   .formbold-img {

@@ -10,9 +10,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My Profile</title>
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/myprof.css">
     </head>
+    <%@include file="Shophead.jsp" %>
     <body>
         <%
           String sel1 = "select*from tbl_shop where shop_id='"+session.getAttribute("shid")+"'";  
@@ -21,13 +23,13 @@
           {
         %>
         <form method="post">
-            <table border="1" align="center">
+            <table align="center">
                 <tr>
-                    <td colspan="2" align="right"><img src="../Assets/Files/ShopLogo/<%=rsag.getString("shop_logo")%>" height="120" width="120"></td>
+                    <td colspan="2" align="right"><img src="../Assets/Files/ShopLogo/<%=rsag.getString("shop_logo")%>" alt="Shop Logo"></td>
                 </tr>
                 <tr>
                     <td>Proof</td>
-                    <td><a href="../Assets/Files/ShopProof/<%=rsag.getString("shop_proof")%>"download>Download</a></td>
+                    <td><a href="../Assets/Files/ShopProof/<%=rsag.getString("shop_proof")%>" download>Download</a></td>
                 </tr>                
                 <tr>
                     <td>Name</td>
@@ -51,4 +53,5 @@
             </table>
         </form>
     </body>
+    <%@include file="Foot.jsp" %>
 </html>

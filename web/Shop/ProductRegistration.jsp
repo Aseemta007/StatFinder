@@ -12,7 +12,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Product</title>
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+                 <link rel="stylesheet" href="../Assets/Templates/Main/css/prodreg.css">
     </head>
+    <%@include file="Shophead.jsp" %>
         <body>
             <%
         if (request.getParameter("did") != null) {
@@ -21,12 +24,20 @@
             con.executeCommand(delQry);
         }
     %>
-        <form  method="post" enctype="multipart/form-data" action="../Assets/ActionPages1/ProductUploadAction.jsp" >
-            <table border="1" align="center">
-                 <tr>
-                        <td>Category</td>
-                        <td><select name="rgcat" onchange = "getCat(this.value)" required> <!--Here onchange triggers the function getCat()-->
-                                <option>--select Category--</option>
+        <div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" enctype="multipart/form-data" action="../Assets/ActionPages1/ProductUploadAction.jsp">
+      <div class="formbold-form-title">
+        <h2 class="">Product Registration</h2>
+      </div>
+       
+      <div class="formbold-input-flex">
+            <div>
+        <label for="rgcat" class="formbold-form-label">
+            Category
+            </label>
+  <select name="rgcat" onchange = "getCat(this.value)" class="formbold-form-input" required >
+   <option>--select Category--</option>
                             <%
                                 String sel = "select*from tbl_category";  /*Here data from table location is fecthed*/
 
@@ -39,68 +50,84 @@
                                 }
                             %>
                         </select>
-
-
-                    </td>
-                </tr>
-                <tr>
-                    <td >Sub category</td>
-                    <td><select name="subcategory" id="selscat" required>
-                            <option value="null">----select Sub category----</option>
-
-                        </select>
-                </tr>
-                <tr>
-                    <td>Product Name</td>
-                    <td><input type="text" name="product_name" required></td>
-                </tr>
-                <tr>
-                    <td>Product Image</td>
-                    <td><input type="file" name="product_image" required></td>
-                </tr>
-                <tr>
-                    <td>Product Details</td>
-                    <td>
-                        <textarea name="product_details" rows="6" cols="20" required></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Product Price</td>
-                    <td><input type="text" name="product_price" required</td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset"</td>
-                </tr>
-            </table>
-        </form>
-        <table border="1" align="center">
-                <tr>
-                    <th>Sl.No</th>
-                    <th>Name</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Action</th>     
-                </tr>
-                <%
-            String selqry="select * from tbl_product";
-            ResultSet rs1=con.selectCommand(selqry);
-            int i=0;
-            while(rs1.next())
-            {
-                i++;
-                %>
-                <tr>
-                    <td><%=i%></td>
-                    <td><%=rs1.getString("product_name")%></td>
-                    <td><a href="../Assets/Files/ProductImage/<%=rs1.getString("product_image")%>"download>Download</a></td>
-                    <td><%=rs1.getString("product_price")%></td>
-                    <td><a href="ProductRegistration.jsp?did=<%=rs1.getString("product_id")%>">delete</a></td>
-                </tr>
-                <%
-            }
-                %>
-            </table>
+            </div>
+            </div>
+                        <div class="formbold-input-flex">
+            <div>
+        <label for="subcategory" class="formbold-form-label">
+            Sub category
+            </label>
+  <select name="subcategory" id="selscat" class="formbold-form-input" required>
+    <option value="null">----select Sub category----</option>
+  </select>
+            </div>
+            </div>
+    <div class="formbold-mb-3">
+        <div>
+          <label for="prodname" class="formbold-form-label">
+            Product Name
+          </label>
+          <input 
+            name="product_name" 
+            placeholder="Enter Product Name" 
+            title="Product Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$"  
+            type="text"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>            
+    <div class="formbold-mb-3">
+        <label for="prod_img" class="formbold-form-label">
+          Product Image
+        </label>
+        <input  
+         type="file" 
+         name="product_image" 
+          id="file_proof"
+          required
+        />
+      </div>
+    <div class="formbold-mb-3">
+        <div>
+          <label for="shopname" class="formbold-form-label">
+            Product Details
+          </label>
+          <textarea 
+            name="product_details" 
+            placeholder="Enter Product Details" 
+            title="Product Details Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$"  
+            rows="6" cols="20"
+            type="text"
+            class="formbold-form-input"
+            required
+          ></textarea>
+        </div>
+      </div>
+     <div class="formbold-mb-3">
+        <div>
+          <label for="prodname" class="formbold-form-label">
+            Product Price
+          </label>
+          <input 
+            name="product_price" 
+            placeholder="Enter Product Price" 
+            title="Product Price Allows Only Numbers" 
+            pattern="[0-9]+([\.][0-9]{1,2})?"  
+            type="text"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>
+               <input type="submit" class="formbold-btn" name="btn_register" value="Register">&nbsp&nbsp<input type="reset" class="formbold-btn" name="btn_reset" value="Reset">
+    </form>
+  </div>
+</div> 
     </body>
+    <%@include file="Foot.jsp" %>
     <script src="../Assets/JQuery/jQuery.js"></script> <!--The jQuery (Javascript Library) file in the specified directory is being processed here-->         
     <script>
                         function getCat(cid) /*Here the function is being defined were parameter is being passed*/
