@@ -45,7 +45,7 @@
             <p class="card-text"><strong>Price: </strong>$<%=rs5.getString("product_price")%></p>
         </div>
         <div class="card-footer">
-            <a href="product_details.jsp?product_id=<%=rs5.getString("product_id")%>" class="btn btn-primary">View Details</a>
+            <a href="ProductDetails.jsp?product_id=<%=rs5.getString("product_id")%>" class="btn btn-primary">View Details</a>
         </div>
     </div>
 </div>

@@ -25,6 +25,16 @@
                 <th>Action</th>
 
             </tr>
+            <%        if (request.getParameter("btn_save") != null) {
+
+            String upQry = "update tbl_complaint set complaint_reply='" + request.getParameter("txt_reply") + "', complaint_reply_date=curdate(),complaint_status='1' where complaint_id='" + request.getParameter("hid") + "'";
+            System.out.println(upQry);
+            con.executeCommand(upQry);
+            response.sendRedirect("Complaintaction.jsp");
+        }
+
+
+    %>
             <%
                 String insqry = "select*from tbl_complaint  w inner join tbl_user l on l.user_id=w.user_id inner join tbl_shop s on s.shop_id=w.shop_id";
                 ResultSet rs = con.selectCommand(insqry);
@@ -41,7 +51,7 @@
                 <td><%=rs.getString("complaint_content")%></td>
                 <td></td>
 
-                <td><a href="Complaintdisplay.jsp?pid=<%=rs.getString("complaint_id")%>">Reply</a></td>
+                <td><a href="Complaintreply.jsp?pid=<%=rs.getString("complaint_id")%>">Reply</a></td>
 
             </tr>
             <%
