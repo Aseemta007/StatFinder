@@ -1,5 +1,5 @@
 
-<<jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
+<jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page  import = "java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,7 +7,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Complaint</title>
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/compdisp.css">
         <%@include file="Shophead.jsp" %>
+
     </head>
 
     <%        if (request.getParameter("btn_save") != null) {
@@ -21,51 +24,12 @@
 
     %>
     <body>
-        <section class="main_content dashboard_part">
-
-            <!--/ menu  -->
-            <div class="main_content_iner ">
-                <div class="container-fluid p-0">
-                    <div class="row justify-content-center">
-                        <div class="col-12">
-                            <div class="QA_section">
-                                <!--Form-->
-                                <%                                    if (request.getParameter("up") != null) {
-                                %>
-
-                                <div class="white_box_tittle list_header">
-                                    <div class="col-lg-12">
-                                        <div class="white_box mb_30">
-                                            <div class="box_header ">
-                                                <div class="main-title">
-                                                    <h3 class="mb-0" >Send Reply</h3>
-                                                </div>
-                                            </div>
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="txt_district">Reply</label>
-                                                    <input required="" type="text" class="form-control" id="txt_reply" name="txt_reply">
-                                                    <input type="hidden" name="hid" value="<%=request.getParameter("up")%>">
-                                                </div>
-                                                <div class="form-group" align="center">
-                                                    <input type="submit" class="btn-dark" style="width:100px; border-radius: 10px 5px " name="btn_save" value="Save">
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <%
-                                    }
-
-
-                                %>
-                                <h1>New Complaints</h1>
-                                <div class="QA_table mb_30">
+        <div align="center" id="h2e">
+ <h2>New Complaints</h2>
                                     <!-- table-responsive -->
-                                    <table class="table lms_table_active">
+                                    <table>
                                         <thead>
-                                            <tr style="background-color: #74CBF9">
+                                            <tr >
                                                 <td align="center" scope="col">Sl.No</td>
                                                 <td align="center" scope="col">Complaint</td>
                                                 <td align="center" scope="col">Date</td>
@@ -87,7 +51,7 @@
                                                 <td align="center"><%=rs.getString("complaint_content")%></td>
                                                 <td align="center"><%=rs.getString("complaint_date")%></td>
                                                 <td align="center"><%=rs.getString("user_name")%></td>
-                                                <td align="center"><a href="ViewComplaint.jsp?up=<%=rs.getString("complaint_id")%>" class="status_btn">Reply</a> </td>
+                                                <td align="center"><a href="ViewComplaint.jsp?up=<%=rs.getString("complaint_id")%>" >Reply</a> </td>
                                             </tr>
                                             <%                      }
 
@@ -96,13 +60,54 @@
 
                                         </tbody>
                                     </table>
-                                </div>
-                                <h1>Replied Complaints</h1>
-                                <div class="QA_table mb_30">
+                               
+                                <%                                    if (request.getParameter("up") != null) {
+                                %>
+                                 <div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" >
+      <div class="formbold-form-title">
+        <h3 class="">Send Reply</h3>
+      </div>
+                               <div class="formbold-mb-3">
+        <div>
+          <textarea 
+            name="txt_reply"  
+            title="Reply Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$"  
+            rows="6" cols="20"
+            type="text"
+            class="formbold-form-input"
+            required
+          ></textarea>
+            <input type="hidden" name="hid" value="<%=request.getParameter("up")%>">
+        </div>
+      </div>
+                                             
+                            <input type="submit" class="formbold-btn" name="btn_register" value="Send">
+    </form>
+  </div>
+</div>
+
+                                                
+                                                
+                                                
+                                                   
+                                        
+                                    
+                              
+
+                                <%
+                                    }
+
+
+                                %>
+                                       <br><br> <h2>Replied Complaints</h2>
+                        
                                     <!-- table-responsive -->
-                                    <table class="table lms_table_active">
+                                    <table>
                                         <thead>
-                                            <tr style="background-color: #74CBF9">
+                                            <tr >
                                                 <td align="center" scope="col">Sl.No</td>
                                                 <td align="center" scope="col">Complaint</td>
                                                 <td align="center" scope="col">Date</td>
@@ -135,14 +140,8 @@
 
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
+                                            </div>
+                                            
     </body>
     <%@include file="Foot.jsp" %>
 </html>

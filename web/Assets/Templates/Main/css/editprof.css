@@ -4,6 +4,16 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
+    Created on : May 20, 2024, 8:54:45 PM
+    Author     : ANANTHU
+*/
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
     Created on : Mar 3, 2024, 5:58:38 PM
     Author     : ANANTHU
 */
@@ -17,7 +27,7 @@ and open the template in the editor.
   }
   body {
     font-family: 'Inter', sans-serif;
-    background: url("../img/prodreg.jpg");
+    background: url("../img/editprof.jpg");
     background-size: 100% 100%;
     background-size: cover;
   background-position: center center;

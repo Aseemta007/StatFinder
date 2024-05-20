@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit Profile</title>
         <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
-                 <link rel="stylesheet" href="../Assets/Templates/Main/css/prodreg.css">
+                 <link rel="stylesheet" href="../Assets/Templates/Main/css/editprof.css">
     </head>
     <%@include file="Shophead.jsp" %>
     <body>

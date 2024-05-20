@@ -110,7 +110,7 @@
                   </div>
                   <div class="col-lg-3 col-sm-6">
                      <div class="box_main">
-                         <a href="Complaintdisplay.jsp">
+                         <a href="ViewComplaint.jsp">
                         <div class="service_img"><img src="../Assets/Templates/Main/img/Comdis.png"></div>
                         <h4 class="development_text">Complaint Display</h4>
                         <p class="services_text">View all Complaints Received and Reply</p>

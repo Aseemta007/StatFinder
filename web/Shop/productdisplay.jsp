@@ -21,7 +21,7 @@
   background-position: center center;
             }
 
-            h2 {
+            #h2e h2{
                  border-collapse: collapse;
   margin: 0 auto;
   overflow: hidden;
@@ -88,7 +88,7 @@
               response.sendRedirect("productdisplay.jsp");
           }
         %>
-        <div align="center">
+        <div align="center" id="h2e">
         <h2>Uploaded products</h2>
          
         <form method="post">
