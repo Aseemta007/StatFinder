@@ -110,7 +110,7 @@
                      %>
                      <tr>
                          <td><%=i%></td>
-                         <td><img src="../Assets/Files/ProductGallery/<%=rs.getString("gallery_image")%>" height="90" width="90"</td>
+                         <td><img src="../Assets/Files/ProductGallery/<%=rs.getString("gallery_image")%>" height="90" width="90"></td>
                          <td><a href="productgallerydisplay.jsp?did=<%=rs.getString("productgallery_id")%>&xid=<%=request.getParameter("gid")%>">Delete</a></td>
                      </tr>
                      <%

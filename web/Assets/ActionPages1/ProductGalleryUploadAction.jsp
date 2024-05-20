@@ -97,8 +97,8 @@
                     }
 
                 }
-                String str1 = "insert into tbl_productgallery(gallery_image,product_id,shop_id)"
-                        + "values('" + ph + "','"+value[0]+"','"+value[1]+"')";
+                String str1 = "insert into tbl_productgallery(gallery_image,product_id)"
+                        + "values('" + ph + "','"+value[0]+"')";
 
                 System.out.println(str1);       
 

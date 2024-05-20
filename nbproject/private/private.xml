@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Shop/productgallery.jsp</file>
             <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Shop/productdisplay.jsp</file>
             <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/User/MyProfile.jsp</file>
@@ -18,6 +19,13 @@
             <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Admin/ChangePassword.jsp</file>
             <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Admin/reviewverification.jsp</file>
             <file>file:/C:/Users/ANANTHU/Documents/NetBeansProjects/StatFinder/web/Shop/EditProfile.jsp</file>
+=======
+            <file>file:/E:/StatFinder/web/User/ProductDetails.jsp</file>
+            <file>file:/E:/StatFinder/web/Admin/ComplaintVerification.jsp</file>
+            <file>file:/E:/StatFinder/web/User/ShopDescription.jsp</file>
+            <file>file:/E:/StatFinder/web/Admin/Complaintaction.jsp</file>
+            <file>file:/E:/StatFinder/web/Shop/productgallerydisplay.jsp</file>
+>>>>>>> 905d65c677f20befae87012ef36bbafc85e045af
         </group>
     </open-files>
 </project-private>
