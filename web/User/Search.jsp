@@ -7,7 +7,7 @@
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="Head.jsp" %>
+<%@include file="Userhead.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
