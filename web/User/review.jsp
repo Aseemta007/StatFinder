@@ -16,7 +16,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Review</title>
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/review.css">
     </head>
+    <%@include file="Userhead.jsp" %>
     <body>
     <%
             if(request.getParameter("btn_submit")!=null)
@@ -31,12 +34,19 @@
             con.executeCommand(delQry);
         }
     %>
-      <form method="post" >
-            <table border="1" align="center">
-            <tr>
-                    <td>Shop</td>
-                    <td><select name="shopid">
-                            <option value="">----select----</option>
+      <div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" >
+      <div class="formbold-form-title">
+        <h2 class="">Review</h2>
+      </div>
+            <div class="formbold-input-flex">
+            <div>
+        <label for="shop" class="formbold-form-label">
+            Shop
+            </label>
+  <select name="shopid" class="formbold-form-input" >
+   <option>--select--</option>
                             <% 
                 String selQry = "select * from tbl_shop";
                 ResultSet rs = con.selectCommand(selQry);
@@ -46,72 +56,83 @@
             <%
                 }
             %>
-                        </select>          
-                    </td>
-                </tr>
-                <tr>
-                    <td>Shop review</td>
-                    <td>
-                        <textarea name="shop_review" rows="6" cols="20"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Shop rating</td>
-                    <td>
-  <label for="rating-1">
-    <input id="rating-1" type="radio" name="rating" value="1">
-    ★
-  </label>
-  <label for="rating-2">
-    <input id="rating-2" type="radio" name="rating" value="2">
-    ★
-  </label>
-  <label for="rating-3">
-    <input id="rating-3" type="radio" name="rating" value="3">
-    ★
-  </label>
-  <label for="rating-4">
-    <input id="rating-4" type="radio" name="rating" value="4">
-    ★
-  </label>
-  <label for="rating-5">
-    <input id="rating-5" type="radio" name="rating" value="5">
-    ★
-  </label>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset"</td>
-                </tr>
-            </table>
-        </form>
-        <table border="1" align="center">
-            <tr>
-                <td>Sl.No</td>
-                <td>Date/time</td>
-                <td>Shop Name</td>
-                <td>User rating </td>
-                <td>User Review </td>
-                <td>Action </td>
-            </tr>
-            <% int i = 0;
-                String seleQry = "select * from tbl_review pc inner join tbl_shop dc on dc.shop_id=pc.shop_id";
-                ResultSet res = con.selectCommand(seleQry);
-                while (res.next()) {
-                    i++;
-            %>
-            <tr>
-                <td><%=i%></td>
-                <td><%=res.getString("review_datetime")%></td>
-                <td><%=res.getString("shop_name")%></td>
-                <td><%=res.getString("user_rating")%></td>
-                <td><%=res.getString("user_review")%></td>
-                <td><a href="review.jsp?del=<%=res.getString("review_id")%>">Delete</a></td>
-            </tr>
-            <%
-                }
-            %>
-        </table>
+                        </select> 
+            </div>
+            </div>
+                        
+                        <div class="formbold-mb-3">
+        <div>
+          <label for="shop_review" class="formbold-form-label">
+            Shop review
+          </label>
+          <textarea 
+            name="shop_review" 
+            title="Review Details Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$"  
+            rows="6" cols="20"
+            type="text"
+            class="formbold-form-input"
+            required
+          ></textarea>
+        </div>
+      </div>
+                        
+    
+                 <label for="rating" class="formbold-form-label">
+            Shop Rating
+          </label>
+<div class="rating">
+  <input type="radio" id="star1" name="rating" value="1" />
+  <label for="star1" title="1 star">★</label>
+  <input type="radio" id="star2" name="rating" value="2" />
+  <label for="star2" title="2 stars">★</label>
+  <input type="radio" id="star3" name="rating" value="3" />
+  <label for="star3" title="3 stars">★</label>
+  <input type="radio" id="star4" name="rating" value="4" />
+  <label for="star4" title="4 stars">★</label>
+  <input type="radio" id="star5" name="rating" value="5" />
+  <label for="star5" title="5 stars">★</label>
+</div>
+                    <input type="submit" class="formbold-btn" name="btn_submit" value="Submit">&nbsp&nbsp<input type="reset" class="formbold-btn" name="btn_reset" value="Reset">
+    </form>
+  </div>
+</div>
+                        <h3 align="center">Replied Complaints</h3><br>
+                        
+                                    <!-- table-responsive -->
+                                    <table>
+                                        <thead>
+                                            <tr >
+                                                <td align="center" scope="col">Sl.No</td>
+                                                <td align="center" scope="col">Shop Name</td>
+                                                <td align="center" scope="col">Your Rating</td>
+                                                <td align="center" scope="col">Review</td>
+                                       
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%                                                int j = 0;
+                                                String selQry1 = "select * from tbl_review c inner join tbl_shop co on co.shop_id=c.shop_id where user_id='"+session.getAttribute("uid")+"'";
+                                                ResultSet rs1 = con.selectCommand(selQry1);
+                                                while (rs1.next()) {
+
+                                                    j++;
+
+                                            %>
+                                            <tr>
+                                                <td align="center"><%=j%></td>
+                                                <td align="center"><%=rs1.getString("shop_name")%></td>
+                                                <td align="center"><%=rs1.getString("user_rating")%></td>
+                                                <td align="center"><%=rs1.getString("user_review")%></td>
+                                                <td><a href="review.jsp?del=<%=rs1.getString("review_id")%>">Delete</a></td>
+                                            </tr>
+                                            <%                      }
+
+
+                                            %>
+
+                                        </tbody>
+                                    </table>
     </body>
 </html>
+<%@include file="../Guest/Foot.jsp" %>

@@ -49,5 +49,5 @@
             </table>
                 
     </body>
-    <%@include file="Foot.jsp" %>
+    <%@include file="../Guest/Foot.jsp" %>
 </html>

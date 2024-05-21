@@ -30,8 +30,8 @@
                     <td><%=rsu.getString("product_name")%></td>
                 </tr>
                 <tr>
-                    <td>Product Image</td>
-                    <td><%=rsu.getString("product_image")%></td>
+                    <td>Product Details</td>
+                    <td><%=rsu.getString("product_details")%></td>
                 </tr>
                 <tr>
                     <td>Shop Name</td>

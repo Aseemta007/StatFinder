@@ -12,7 +12,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Feedback</title>
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/review.css">
     </head>
+    <%@include file="Userhead.jsp" %>
     <body>
             <%
             if(request.getParameter("btn_submit")!=null)
@@ -27,20 +30,32 @@
             con.executeCommand(delQry);
         }
     %>
-      <form method="post" >
-            <table border="1" align="center">
-                
-                <tr>
-                    <td>Feedback</td>
-                    <td>
-                        <textarea name="feedback_content" rows="6" cols="20"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset"</td>
-                </tr>
-            </table>
-        </form>
+      <div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" >
+      <div class="formbold-form-title">
+        <h2 class="">Feedback</h2>
+      </div>
+        <div class="formbold-mb-3">
+        <div>
+          <label for="feedback_content" class="formbold-form-label">
+            Feedback
+          </label>
+          <textarea 
+            name="feedback_content" 
+            title="Feedback Content Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$"  
+            rows="6" cols="20"
+            type="text"
+            class="formbold-form-input"
+            required
+          ></textarea>
+        </div>
+      </div>
+<input type="submit" class="formbold-btn" name="btn_submit" value="Submit">&nbsp&nbsp<input type="reset" class="formbold-btn" name="btn_reset" value="Reset">
+    </form>
+  </div>
+</div>
        <table border="1" align="center">
             <tr>
                 <td>Sl.No</td>
@@ -49,7 +64,7 @@
                 <td>Action </td>
             </tr>
             <% int i = 0;
-                String seleQry = "select * from tbl_feedback";
+                String seleQry = "select * from tbl_feedback where user_id='"+session.getAttribute("uid")+"'";
                 ResultSet res = con.selectCommand(seleQry);
                 while (res.next()) {
                     i++;
@@ -66,3 +81,4 @@
         </table>
     </body>
 </html>
+<%@include file="../Guest/Foot.jsp" %>

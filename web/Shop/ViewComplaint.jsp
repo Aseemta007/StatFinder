@@ -39,7 +39,7 @@
                                         </thead>
                                         <tbody>
                                             <%                                                int i = 0;
-                                                String selQry = "select * from tbl_complaint c inner join tbl_user co on co.user_id=c.user_id where complaint_status='0'";
+                                                String selQry = "select * from tbl_complaint c inner join tbl_user co on co.user_id=c.user_id where complaint_status='0' and shop_id='"+session.getAttribute("shid")+"'";
                                                 ResultSet rs = con.selectCommand(selQry);
                                                 while (rs.next()) {
 
@@ -84,7 +84,7 @@
         </div>
       </div>
                                              
-                            <input type="submit" class="formbold-btn" name="btn_register" value="Send">
+                            <input type="submit" class="formbold-btn" name="btn_save" value="Send">
     </form>
   </div>
 </div>
@@ -118,7 +118,7 @@
                                         </thead>
                                         <tbody>
                                             <%                                                int j = 0;
-                                                String selQry1 = "select * from tbl_complaint c inner join tbl_user co on co.user_id=c.user_id where complaint_status='1'";
+                                                String selQry1 = "select * from tbl_complaint c inner join tbl_user co on co.user_id=c.user_id where complaint_status='1' and c.shop_id='"+session.getAttribute("shid")+"'";
                                                 ResultSet rs1 = con.selectCommand(selQry1);
                                                 while (rs1.next()) {
 
@@ -143,5 +143,5 @@
                                             </div>
                                             
     </body>
-    <%@include file="Foot.jsp" %>
+    <%@include file="../Guest/Foot.jsp" %>
 </html>

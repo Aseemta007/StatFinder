@@ -12,7 +12,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My Profile</title>
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/myprof.css">
     </head>
+    <%@include file="Userhead.jsp" %>
     <body>
         <%
           String sel1 = "select*from tbl_user where user_id='"+session.getAttribute("uid")+"'";  
@@ -21,7 +24,7 @@
           {
         %>
         <form method="post">
-            <table border="1" align="center">
+            <table align="center">
                 <tr>
                     <td colspan="2" align="right"><img src="../Assets/Files/UserPhoto/<%=rsu.getString("user_photo")%>" height="120" width="120"></td>
                 </tr>
@@ -47,4 +50,5 @@
             </table>
         </form>
     </body>
+    <%@include file="../Guest/Foot.jsp" %>
 </html>

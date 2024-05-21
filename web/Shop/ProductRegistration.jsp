@@ -127,7 +127,7 @@
   </div>
 </div> 
     </body>
-    <%@include file="Foot.jsp" %>
+    <%@include file="../Guest/Foot.jsp" %>
     <script src="../Assets/JQuery/jQuery.js"></script> <!--The jQuery (Javascript Library) file in the specified directory is being processed here-->         
     <script>
                         function getCat(cid) /*Here the function is being defined were parameter is being passed*/

@@ -4,32 +4,36 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : May 20, 2024, 7:07:25 PM
+    Created on : May 21, 2024, 2:11:06 PM
     Author     : ANANTHU
 */
-
-body {
+  body {
     font-family: 'Inter', sans-serif;
     background: url("../img/proddisp.jpg");
     background-size: 100% 100%;
     background-size: cover;
   background-position: center center;
-            }
-
-            #h2e h2{
-                 border-collapse: collapse;
+      //background-repeat: no-repeat;
+      //background-position: center center;
+    
+  }
+.shop-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  overflow: hidden;
-  color: #333;
-  max-width: 400px;
-  margin-bottom: 30px;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
 }
 
-            table {
+.shop-logo {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+ table {
               border-collapse: collapse;
               margin: 0 auto;
               overflow: hidden;
@@ -71,3 +75,7 @@ body {
             form {
               margin-top: 30px;
             }
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

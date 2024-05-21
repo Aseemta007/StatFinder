@@ -12,6 +12,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Complaint</title>
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/review.css">
+    </head>
+    <%@include file="Userhead.jsp" %>
     </head>
     <body>
     <%
@@ -57,12 +61,19 @@
             }
         }
     %>
-        <form method="post" >
-            <table border="1" align="center">
-                <tr>
-                    <td>Shop</td>
-                    <td><select name="shopid">
-                            <option value="">----select----</option>
+      <div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" >
+      <div class="formbold-form-title">
+        <h2 class="">Complaint</h2>
+      </div>
+            <div class="formbold-input-flex">
+            <div>
+        <label for="shop" class="formbold-form-label">
+            Shop
+            </label>
+  <select name="shopid" class="formbold-form-input" >
+   <option>--select--</option>
                             <% 
                 String selQry = "select * from tbl_shop";
                 ResultSet rs = con.selectCommand(selQry);
@@ -72,24 +83,49 @@
             <%
                 }
             %>
-                        </select>          
-                    </td>
-                </tr>
-                <tr>
-                    <td>Complaint Title</td>
-                    <td><input type="text" name="complaint_title"</td>
-                </tr>
-                <tr>
-                    <td>Complaint content</td>
-                    <td>
-                        <textarea name="complaint_content" rows="6" cols="20"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register">&nbsp&nbsp<input type="reset" name="btn_reset" value="Reset"</td>
-                </tr>
-            </table>
-        </form>
+                        </select> 
+            </div>
+            </div>
+                        
+        <div class="formbold-mb-3">
+        <div>
+          <label for="complaint_title" class="formbold-form-label">
+            Complaint Title
+          </label>
+          <input  
+            name="complaint_title"
+            title="Complaint Title Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$"  
+            type="text"
+            class="formbold-form-input"
+            required
+          />
+        </div>
+      </div>
+      
+       <div class="formbold-mb-3">
+        <div>
+          <label for="complaint_content" class="formbold-form-label">
+            Shop review
+          </label>
+          <textarea 
+            name="complaint_content" 
+            title="Complaint Content Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$"  
+            rows="6" cols="20"
+            type="text"
+            class="formbold-form-input"
+            required
+          ></textarea>
+        </div>
+      </div>
+                        
+    
+                    <input type="submit" class="formbold-btn" name="btn_submit" value="Submit">&nbsp&nbsp<input type="reset" class="formbold-btn" name="btn_reset" value="Reset">
+    </form>
+  </div>
+</div>  
+
                         <table border="1" align="center">
             <tr>
                 <td>Sl.No</td>
@@ -97,12 +133,12 @@
                 <td>Complaint title</td>
                 <td>Shop Name</td>
                 <td>complaint content </td>
-                <td>Complaint status</td>
                 <td>Complaint reply</td>
+                <td>Admin's Reply</td>
                 <td>Action </td>
             </tr>
             <% int i = 0;
-                String seleQry = "select * from tbl_complaint pc inner join tbl_shop dc on dc.shop_id=pc.shop_id";
+                String seleQry = "select * from tbl_complaint pc inner join tbl_shop dc on dc.shop_id=pc.shop_id where user_id='"+session.getAttribute("uid")+"'";
                 ResultSet res = con.selectCommand(seleQry);
                 while (res.next()) {
                     i++;
@@ -113,8 +149,8 @@
                 <td><%=res.getString("complaint_title")%></td>
                 <td><%=res.getString("shop_name")%></td>
                 <td><%=res.getString("complaint_content")%></td>
-                <td><%=res.getString("complaint_status")%></td>
                 <td><%=res.getString("complaint_reply")%></td>
+                <td><%=res.getString("complaint_reply_admin")%></td>
                 <td><a href="complaint.jsp?del=<%=res.getString("complaint_id")%>">Delete</a></td>
             </tr>
             <%
@@ -123,3 +159,4 @@
         </table>
     </body>
 </html>
+<%@include file="../Guest/Foot.jsp" %>
