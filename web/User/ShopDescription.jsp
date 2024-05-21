@@ -85,7 +85,7 @@
     <div class="card h-100">
         <img src="../Assets/Files/ProductImage/<%=rs.getString("product_image")%>" class="card-img-top" alt="<%=rs.getString("product_name")%>">
         <div class="card-body">
-            <h5 class="card-title"><%=rs.getString("product_name")%></h5>
+            <h5 class="card-title" ><%=rs.getString("product_name")%></h5>
             <p class="card-text"><%=rs.getString("product_details")%></p>
             <p class="card-text"><strong>Price: </strong>$<%=rs.getString("product_price")%></p>
         </div>
