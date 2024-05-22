@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>ItemFinder::Login</title>
+        <title>Login</title>
         <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
         <link rel="stylesheet" href="../Assets/Templates/Main/css/Login.css">
     </head>

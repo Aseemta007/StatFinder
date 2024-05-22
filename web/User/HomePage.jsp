@@ -45,7 +45,7 @@
          <div class="container-fluid">
             <div class="row">
                <div class="col-sm-12">
-                  <h1 class="services_taital">Hello <%=session.getAttribute("user_name")%></h1>
+                  <h1 class="services_taital">Hello <%=session.getAttribute("uname")%></h1>
                   <p class="services_text_1"></p>
                </div>
             </div>

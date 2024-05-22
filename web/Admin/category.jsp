@@ -12,7 +12,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Category</title>
-    </head>
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+            <link rel="stylesheet" href="../Assets/Templates/Main/css/review.css">
+        </head>
+        <%@include file="../Guest/Head.jsp" %>
      <%
             if(request.getParameter("btn_save")!=null)
             {
@@ -50,39 +53,65 @@
              }
              
         %>
-    <body>
-        <form method="post">
-            <table align="center" border="1">
-                <tr>
-                    <td align="center">CATEGORY</td>
-                    <td><input required type="text" name="category" value="<%=editcat%>" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$"/></td>
-                        <input type="hidden" name="txtid" value="<%=editid%>">
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_save" value="SAVE"></td>
-                </tr>
-            </table>
-        </form>
-        <table border="1" align="center">
-            <tr>
-                <td>Sl.No</td>
-                <td>Category</td>
-                <td>Action  </td>
-            </tr>
-            <% int i = 0;
+<div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" >
+      <div class="formbold-form-title">
+        <h2 class="">Category</h2>
+      </div>
+            
+        <div class="formbold-mb-3">
+        <div>
+          <label for="category" class="formbold-form-label">
+            Category
+          </label>
+          <input 
+            name="category" 
+            placeholder="Enter Category name" 
+            title="Category name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$" 
+            type="text"
+            value="<%=editcat%>"
+            class="formbold-form-input"
+            required
+          /><input type="hidden" name="txtid" value="<%=editid%>">
+        </div>
+      </div>
+                    <input type="submit" class="formbold-btn" name="btn_save" value="Save">&nbsp&nbsp<input type="reset" class="formbold-btn" name="Cancel" value="Cancel">
+    </form>
+  </div>
+</div>
+                        <h3 align="center">Categories</h3><br>
+                        
+                                    <!-- table-responsive -->
+                                    <table>
+                                        <thead>
+                                            <tr >
+                                                <td align="center" scope="col">Sl.No</td>
+                                                <td align="center" scope="col">Category</td>
+                                                <td align="center" scope="col">Action</td>
+                                       
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           <% int i = 0;
                 String selQry = "select * from tbl_category";
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
                     i++;
             %>
-            <tr>
-                <td><%=i%></td>
-                <td><%=rs.getString("category_name")%></td>
-                <td><a href="category.jsp?did=<%=rs.getString("category_id")%>">delete</a>|<a href="category.jsp?eid=<%=rs.getString("category_id")%>">Edit</a></td>
-            </tr>
-            <%
-                }
-            %>
-        </table>
+                                            <tr>
+                                                <td align="center"><%=i%></td>
+                                                <td align="center"><%=rs.getString("category_name")%></td>
+                                                <td align="center"><a href="category.jsp?did=<%=rs.getString("category_id")%>">delete</a>|<a href="category.jsp?eid=<%=rs.getString("category_id")%>">Edit</a></td>
+                                            </tr>
+                                            <%                      }
+
+
+                                            %>
+
+                                        </tbody>
+                                    </table>
     </body>
 </html>
+<%@include file="../Guest/Foot.jsp" %>

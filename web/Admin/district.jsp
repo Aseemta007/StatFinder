@@ -11,8 +11,11 @@
    <%@page import="java.sql.ResultSet" %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>District 2</title>
-    </head>
+        <title>District</title>
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+            <link rel="stylesheet" href="../Assets/Templates/Main/css/review.css">
+        </head>
+        <%@include file="../Guest/Head.jsp" %>
     <body>
         <%
             if(request.getParameter("Save")!=null)
@@ -51,31 +54,48 @@
              }
              
         %>
-        <form method="post">
-        <table border="3" align="center">
-            <tr>
-                <td>
-                   District
-                </td>
-                <td><input type="text" name="txtloc" placeholder="Enter district name" value="<%=editname%>" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$" required>
-                        <input type="hidden" name="txtid" value="<%=editid%>">
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" name="Save" value="Save">
-                    <input type="reset" name="cancel" value="cancel">
-                </td>
-            </tr>
-        </table>
-                </form>
-            <table border="1" align="center">
-                <tr>
-                    <th>Sl.No</th>
-                    <th>Location</th>
-                    <th>Action</th>
-                </tr>
-                <%
+<div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" >
+      <div class="formbold-form-title">
+        <h2 class="">District</h2>
+      </div>
+            
+        <div class="formbold-mb-3">
+        <div>
+          <label for="txtloc" class="formbold-form-label">
+            District
+          </label>
+          <input 
+            name="txtloc" 
+            placeholder="Enter district name" 
+            title="District name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$" 
+            type="text"
+            value="<%=editname%>"
+            class="formbold-form-input"
+            required
+          /><input type="hidden" name="txtid" value="<%=editid%>">
+        </div>
+      </div>
+                    <input type="submit" class="formbold-btn" name="Save" value="Save">&nbsp&nbsp<input type="reset" class="formbold-btn" name="Cancel" value="Cancel">
+    </form>
+  </div>
+</div>
+                        <h3 align="center">Districts</h3><br>
+                        
+                                    <!-- table-responsive -->
+                                    <table>
+                                        <thead>
+                                            <tr >
+                                                <td align="center" scope="col">Sl.No</td>
+                                                <td align="center" scope="col">District</td>
+                                                <td align="center" scope="col">Action</td>
+                                       
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%
             String selqry="select * from tbl_district";
             ResultSet rs=con.selectCommand(selqry);
             int i=0;
@@ -83,15 +103,18 @@
             {
                 i++;
                 %>
-                <tr>
-                    <td><%=i%></td>
-                    <td><%=rs.getString("district_name")%></td>
-                    <td><a href="district.jsp?did=<%=rs.getString("district_id")%>">delete</a>|<a href="district.jsp?eid=<%=rs.getString("district_id")%>">Edit</a></td>
-                </tr>
-                <%
-            }
-                %>
-            </table>
-            
+                                            <tr>
+                                                <td align="center"><%=i%></td>
+                                                <td align="center"><%=rs.getString("district_name")%></td>
+                                                <td align="center"><a href="district.jsp?did=<%=rs.getString("district_id")%>">delete</a>|<a href="district.jsp?eid=<%=rs.getString("district_id")%>">Edit</a></td>
+                                            </tr>
+                                            <%                      }
+
+
+                                            %>
+
+                                        </tbody>
+                                    </table>
     </body>
 </html>
+<%@include file="../Guest/Foot.jsp" %>

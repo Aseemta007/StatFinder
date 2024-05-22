@@ -12,7 +12,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/proddisp.css">
+   
     </head>
+    <%@include file="../Guest/Head.jsp" %>
     <body>
          <%
             if (request.getParameter("aid") != null) {
@@ -76,3 +80,4 @@
             </table>
     </body>
 </html>
+<%@include file="../Guest/Foot.jsp" %>

@@ -120,7 +120,7 @@
           />
         </div>
       </div>
-      <input type="submit" class="formbold-btn" name="btn_register" value="Save">&nbsp&nbsp<input type="reset" class="formbold-btn" name="btn_reset" value="Reset">
+      <input type="submit" class="formbold-btn" name="txtupdate" value="Save">&nbsp&nbsp<input type="reset" class="formbold-btn" name="btn_reset" value="Reset">
     </form>
   </div>
 </div> 

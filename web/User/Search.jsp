@@ -22,7 +22,7 @@
   <div class="formbold-form-wrapper">
     <form method="post" >
       <div class="formbold-form-title">
-        <h2 class="">Product Registration</h2>
+        <h2 class="">Search</h2>
       </div>
         
         <div class="formbold-input-flex">

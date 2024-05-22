@@ -12,7 +12,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>SUB CATEGORY</title>
-    </head>
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+            <link rel="stylesheet" href="../Assets/Templates/Main/css/review.css">
+        </head>
+        <%@include file="../Guest/Head.jsp" %>
     <%
             if(request.getParameter("btn_save")!=null)
             {
@@ -50,14 +53,20 @@
              }
              
         %>
-    <body>
-        <form method="post">
-            <table align="center" border="1">
-                <tr>
-                    <td>CATEGORY</td>
-                    <td><select name="category"> 
-                         <option value="null">----select----</option>
-                            <% 
+<div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" >
+      <div class="formbold-form-title">
+        <h2 class="">Sub-category</h2>
+      </div>
+         <div class="formbold-input-flex">
+            <div>
+        <label for="category" class="formbold-form-label">
+            Category
+            </label>
+  <select name="category" class="formbold-form-input" >
+   <option>--select--</option>
+                           <% 
                 String selQry = "select * from tbl_category";
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
@@ -66,41 +75,64 @@
             <%
                 }
             %>
-                    </td>
-                </tr>
-                <tr>
-                    <td>SUB CATEGORY</td>
-                    <td><input required type="text" name="subcategory" value="<%=editsub%>" title="Category Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$"/></td>
-                                    <input type="hidden" name="txtid" value="<%=editid%>">
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_save" value="SAVE">&nbsp&nbsp<input type="reset" name="btn_reset" value="RESET"</td>
-                </tr>
-            </table>
-                
-        </form>
-                    <table border="1" align="center">
-            <tr>
-                <td>Sl.No</td>
-                <td>Subcategory</td>
-                <td>Category</td>
-                <td>Action  </td>
-            </tr>
-            <% int i = 0;
+                        </select> 
+            </div>
+            </div>
+            
+        <div class="formbold-mb-3">
+        <div>
+          <label for="subcategory" class="formbold-form-label">
+            Sub-category
+          </label>
+          <input 
+            name="subcategory" 
+            placeholder="Enter Sub-category name" 
+            title="Sub-category name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$" 
+            type="text"
+            value="<%=editsub%>"
+            class="formbold-form-input"
+            required
+          /><input type="hidden" name="txtid" value="<%=editid%>">
+        </div>
+      </div>
+                    <input type="submit" class="formbold-btn" name="btn_save" value="Save">&nbsp&nbsp<input type="reset" class="formbold-btn" name="Cancel" value="Cancel">
+    </form>
+  </div>
+</div>
+                        <h3 align="center">Sub-categories</h3><br>
+                        
+                                    <!-- table-responsive -->
+                                    <table>
+                                        <thead>
+                                            <tr >
+                                                <td align="center" scope="col">Sl.No</td>
+                                                <td align="center" scope="col">Sub-category</td>
+                                                <td align="center" scope="col">Category</td>
+                                                <td align="center" scope="col">Action</td>
+                                       
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% int i = 0;
                 String seleQry = "select * from tbl_subcategory sc inner join tbl_category c on c.category_id=sc.category_id";
                 ResultSet res = con.selectCommand(seleQry);
                 while (res.next()) {
                     i++;
             %>
-            <tr>
-                <td><%=i%></td>
-                <td><%=res.getString("subcategory_name")%></td>
-                <td><%=res.getString("category_name")%></td>
-                <td><a href="subcategory.jsp?did=<%=res.getString("subcategory_id")%>">delete</a>|<a href="subcategory.jsp?eid=<%=res.getString("subcategory_id")%>">Edit</a></td>
-            </tr>
-            <%
-                }
-            %>
-        </table>
+                                            <tr>
+                                                <td align="center"><%=i%></td>
+                                                <td align="center"><%=res.getString("subcategory_name")%></td>
+                                                <td align="center"><%=res.getString("category_name")%></td>
+                                                <td align="center"><a href="subcategory.jsp?did=<%=res.getString("subcategory_id")%>">delete</a>|<a href="subcategory.jsp?eid=<%=res.getString("subcategory_id")%>">Edit</a></td>
+                                            </tr>
+                                            <%                      }
+
+
+                                            %>
+
+                                        </tbody>
+                                    </table>
     </body>
 </html>
+<%@include file="../Guest/Foot.jsp" %>

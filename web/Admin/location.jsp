@@ -10,8 +10,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>lOCATION</title>
-    </head>
+        <title>Location</title>
+    <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
+            <link rel="stylesheet" href="../Assets/Templates/Main/css/review.css">
+        </head>
+        <%@include file="../Guest/Head.jsp" %>
     <%
             if(request.getParameter("btn_save")!=null)
             {
@@ -49,13 +52,19 @@
              }
              
         %>
-    <body>
-        <form method="post">
-            <table align="center" border="1">
-                <tr>
-                    <td>PLACE</td>
-                    <td><select name="place">
-                            <option value="null">----select----</option>
+<div class="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form method="post" >
+      <div class="formbold-form-title">
+        <h2 class="">Location</h2>
+      </div>
+         <div class="formbold-input-flex">
+            <div>
+        <label for="place" class="formbold-form-label">
+            Place
+            </label>
+  <select name="place" class="formbold-form-input" >
+   <option>--select--</option>
                             <%
                                 String selQry = "select * from tbl_place";
                                 ResultSet rs = con.selectCommand(selQry);
@@ -65,43 +74,66 @@
                             <%
                                 }
                             %>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">LOCATION</td>
-                    <td><input required type="text" name="location" value="<%=editloc%>" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$"/></td>
-                            <input type="hidden" name="txtid" value="<%=editid%>">
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="btn_save" value="SAVE">&nbsp&nbsp<input type="reset" name="btn_rest" value="RESET"></td>
-                </tr>
-
-            </table>
-        </form>
-        <table border="1" align="center">
-            <tr>
-                <td>Sl.No</td>
-                <td>location</td>
-                <td>place</td>
-                <td>Action  </td>
-            </tr>
-            <% int i = 0;
+                        </select> 
+            </div>
+            </div>
+            
+        <div class="formbold-mb-3">
+        <div>
+          <label for="location" class="formbold-form-label">
+            Location
+          </label>
+          <input 
+            name="location" 
+            placeholder="Enter Location name" 
+            title="Location name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" 
+            pattern="^[A-Z]+[a-zA-Z ]*$" 
+            type="text"
+            value="<%=editloc%>"
+            class="formbold-form-input"
+            required
+          /><input type="hidden" name="txtid" value="<%=editid%>">
+        </div>
+      </div>
+                    <input type="submit" class="formbold-btn" name="btn_save" value="Save">&nbsp&nbsp<input type="reset" class="formbold-btn" name="Cancel" value="Cancel">
+    </form>
+  </div>
+</div>
+                        <h3 align="center">Locations</h3><br>
+                        
+                                    <!-- table-responsive -->
+                                    <table>
+                                        <thead>
+                                            <tr >
+                                                <td align="center" scope="col">Sl.No</td>
+                                                <td align="center" scope="col">Place</td>
+                                                <td align="center" scope="col">Location</td>
+                                                <td align="center" scope="col">Action</td>
+                                       
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% int i = 0;
                 String seleQry = "select * from tbl_location pc inner join tbl_place dc on dc.place_id=pc.place_id";
                 ResultSet res = con.selectCommand(seleQry);
                 while (res.next()) {
                     i++;
             %>
-            <tr>
-                <td><%=i%></td>
-                <td><%=res.getString("location_name")%></td>
-                <td><%=res.getString("place_name")%></td>
-                <td><a href="location.jsp?did=<%=res.getString("location_id")%>">delete</a>|<a href="location.jsp?eid=<%=res.getString("location_id")%>">Edit</a></td>
-            </tr>
-            <%
-                }
-            %>
-        </table>
+                                            <tr>
+                                                <td align="center"><%=i%></td>
+                                                <td align="center"><%=res.getString("location_name")%></td>
+                                                <td align="center"><%=res.getString("place_name")%></td>
+                                                <td align="center"><a href="location.jsp?did=<%=res.getString("location_id")%>">delete</a>|<a href="location.jsp?eid=<%=res.getString("location_id")%>">Edit</a></td>
+                                            </tr>
+                                            <%                      }
+
+
+                                            %>
+
+                                        </tbody>
+                                    </table>
     </body>
 </html>
+<%@include file="../Guest/Foot.jsp" %>
+
 
