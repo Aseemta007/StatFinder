@@ -20,14 +20,14 @@
     <body>
          <%
             if (request.getParameter("aid") != null) {
-               String up= "update tbl_shop set shop_vstate='2' where shop_id ='"+request.getParameter("aid")+"'"  ;
+               String up= "update tbl_shop set shop_vstate='1' where shop_id ='"+request.getParameter("aid")+"'"  ;
                con.executeCommand(up);
             }
             
          %>
           <%
             if (request.getParameter("rid") != null) {
-               String up1= "update tbl_shop set shop_vstate='3' where shop_id ='"+request.getParameter("rid")+"'"  ;
+               String up1= "update tbl_shop set shop_vstate='2' where shop_id ='"+request.getParameter("rid")+"'"  ;
                con.executeCommand(up1);
             }
             
@@ -62,11 +62,11 @@
                  {
                    out.println("Shop profile is pending");
                  }
-            else if (rs.getInt("shop_vstate")==2)
+            else if (rs.getInt("shop_vstate")==1)
                  {
                    out.println("Shop profile is accepted");
                  }
-            else if (rs.getInt("shop_vstate")==3)
+            else if (rs.getInt("shop_vstate")==2)
                  {
                    out.println("Shop profile is rejected");
                  }

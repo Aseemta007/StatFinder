@@ -21,6 +21,7 @@ and open the template in the editor.
     background-size: 100% 100%;
     background-size: cover;
   background-position: center center;
+  position: relative;
       //background-repeat: no-repeat;
       //background-position: center center;
     

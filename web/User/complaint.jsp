@@ -149,8 +149,8 @@
                 <td><%=res.getString("complaint_title")%></td>
                 <td><%=res.getString("shop_name")%></td>
                 <td><%=res.getString("complaint_content")%></td>
-                <td><%=res.getString("complaint_reply")%></td>
-                <td><%=res.getString("complaint_reply_admin")%></td>
+                <td><%=res.getString("complaint_reply") != null ? res.getString("complaint_reply") : "&nbsp;" %></td>
+                <td><%=res.getString("complaint_reply_admin") != null ? res.getString("complaint_reply_admin") : "&nbsp;" %></td>  
                 <td><a href="complaint.jsp?del=<%=res.getString("complaint_id")%>">Delete</a></td>
             </tr>
             <%

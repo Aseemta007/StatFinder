@@ -20,14 +20,14 @@
     <body>
          <%
             if (request.getParameter("aid") != null) {
-               String up= "update tbl_user set user_vstate='2' where user_id ='"+request.getParameter("aid")+"'"  ;
+               String up= "update tbl_user set user_vstate='1' where user_id ='"+request.getParameter("aid")+"'"  ;
                con.executeCommand(up);
             }
             
          %>
           <%
             if (request.getParameter("rid") != null) {
-               String up1= "update tbl_user set user_vstate='3' where user_id ='"+request.getParameter("rid")+"'"  ;
+               String up1= "update tbl_user set user_vstate='2' where user_id ='"+request.getParameter("rid")+"'"  ;
                con.executeCommand(up1);
             }
             
@@ -64,11 +64,11 @@
                  {
                    out.println("User profile is pending");
                  }
-            else if (rs.getInt("user_vstate")==2)
+            else if (rs.getInt("user_vstate")==1)
                  {
                    out.println("User profile is accepted");
                  }
-            else if (rs.getInt("user_vstate")==3)
+            else if (rs.getInt("user_vstate")==2)
                  {
                    out.println("User profile is rejected");
                  }

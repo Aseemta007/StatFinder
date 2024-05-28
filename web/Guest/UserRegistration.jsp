@@ -16,7 +16,7 @@
             <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
             <link rel="stylesheet" href="../Assets/Templates/Main/css/userreg.css">
         </head>
-        <%@include file="../User/Userhead.jsp" %>
+        <%@include file="Userhead.jsp" %>
         <body>
     
  <div class="formbold-main-wrapper">

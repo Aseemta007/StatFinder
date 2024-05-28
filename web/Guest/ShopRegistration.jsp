@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
                  <link rel="stylesheet" href="../Assets/Templates/Main/css/shopreg.css">
     </head>
-    <%@include file="../Shop/Shophead.jsp" %>
+    <%@include file="Shophead.jsp" %>
     <body>
      <div class="formbold-main-wrapper">
   <div class="formbold-form-wrapper">

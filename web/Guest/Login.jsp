@@ -22,48 +22,81 @@
         {
             String email = request.getParameter("txt_email");
             String password = request.getParameter("txt_password");
-            
+            int sts = 0;
             String seladmin = "select * from tbl_admin where admin_email='"+email+"' and admin_password='"+password+"'";
             String selshop = "select * from tbl_shop where shop_email='"+email+"' and shop_password='"+password+"'";
             String selUser = "select * from tbl_user where user_email='"+email+"' and user_password='"+password+"'";
             ResultSet rsU = con.selectCommand(selUser);
             ResultSet rsAd = con.selectCommand(seladmin);
             ResultSet rssh = con.selectCommand(selshop);
-            if(rsU.next())
-            {
-                session.setAttribute("uid", rsU.getString("user_id"));
-                session.setAttribute("uname", rsU.getString("user_name"));
-                response.sendRedirect("../User/HomePage.jsp");
-            }
-            else if(rsAd.next())
-            {
-                session.setAttribute("adid", rsAd.getString("admin_id"));
-                session.setAttribute("adname", rsAd.getString("admin_name"));
-                response.sendRedirect("../Admin/HomePage.jsp");
-            }
-            else if(rssh.next())
-            {
-                session.setAttribute("shid", rssh.getString("shop_id"));
-                session.setAttribute("shname", rssh.getString("shop_name"));
-                response.sendRedirect("../Shop/HomePage.jsp");
-            }
-            else
-            {
+  
+        if (rsU.next()) {
+                                                sts = rsU.getInt("user_vstate");
+                                                if (sts == 0)//property table ill illa
+                                                {
+                                    %>
+                                    <script>
+                        alert("Pending verification");
+                        window.location="Login.jsp";
+                    </script>
+                                    <%
+                                    }else if (sts == 2)//rejected
+                                    {
+                                    %>
+                                    <script>
+                                        alert("Rejected User");
+                                        window.location = "Login.jsp";
+                                    </script>
+                                    <%
+                                        } else {
+                                            session.setAttribute("uid", rsU.getString("user_id"));
+                                            session.setAttribute("uname", rsU.getString("user_name"));
+                                            response.sendRedirect("../User/HomePage.jsp");
+                                        }
+                                        } else if(rsAd.next())
+                                        {
+                                        session.setAttribute("adid", rsAd.getString("admin_id"));
+                                        session.setAttribute("adname", rsAd.getString("admin_name"));
+                                        response.sendRedirect("../Admin/HomePage.jsp");
+                                    } else if(rssh.next())
+                                    {
+                                                sts = rssh.getInt("shop_vstate");
+                                                if (sts == 0)//property table ill illa
+                                                {
+                                    %>
+                                    <script>
+                                        alert("Pending verification");
+                                        window.location = "Login.jsp";
+                                    </script>
+                                    <%
+                                    }else if (sts == 2)//rejected
+                                    {
+                                    %>
+                                    <script>
+                                        alert("Rejected Shop");
+                                        window.location = "Login.jsp";
+                                    </script>
+                                    <%
+                                        } else {
+                                            session.setAttribute("shid", rssh.getString("shop_id"));
+                                            session.setAttribute("shname", rssh.getString("shop_name"));
+                                            response.sendRedirect("../Shop/HomePage.jsp");
+                                        }
+
+                                        }else {
                 %>
                     <script>
                         alert("Invalid Credentials");
                         window.location="Login.jsp";
                     </script>
                 <%
-            }            
-            
-            
-            
-            
-            
+            }
         }
-    
-    %>
+        
+
+
+                                    %>    
+
     <body>
         <form method="post">
           <div class="ring">
