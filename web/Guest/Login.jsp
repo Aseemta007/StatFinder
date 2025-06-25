@@ -32,7 +32,7 @@
   
         if (rsU.next()) {
                                                 sts = rsU.getInt("user_vstate");
-                                                if (sts == 0)//property table ill illa
+                                                if (sts == 0)
                                                 {
                                     %>
                                     <script>

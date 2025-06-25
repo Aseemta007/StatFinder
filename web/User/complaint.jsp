@@ -125,7 +125,7 @@
     </form>
   </div>
 </div>  
-
+                        <div class="content-wrapper">
                         <table border="1" align="center">
             <tr>
                 <td>Sl.No</td>
@@ -157,6 +157,7 @@
                 }
             %>
         </table>
+                        </div>
     </body>
 </html>
 <%@include file="../Guest/Foot.jsp" %>

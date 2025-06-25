@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
                  <link rel="stylesheet" href="../Assets/Templates/Main/css/changepass.css">
     </head>
-   <%@include file="../Guest/Head.jsp" %>
+   <%@include file="Head.jsp" %>
     <%  
         
        String currentpsswd=request.getParameter("txtpsswd");

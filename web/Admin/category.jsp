@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
             <link rel="stylesheet" href="../Assets/Templates/Main/css/review.css">
         </head>
-        <%@include file="../Guest/Head.jsp" %>
+        <%@include file="Head.jsp" %>
      <%
             if(request.getParameter("btn_save")!=null)
             {
@@ -82,7 +82,7 @@
   </div>
 </div>
                         <h3 align="center">Categories</h3><br>
-                        
+                        <div class="content-wrapper">
                                     <!-- table-responsive -->
                                     <table>
                                         <thead>
@@ -112,6 +112,7 @@
 
                                         </tbody>
                                     </table>
+                        </div>
     </body>
 </html>
 <%@include file="../Guest/Foot.jsp" %>

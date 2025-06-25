@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="../Assets/Templates/Main/css/proddisp.css">
    
     </head>
-    <%@include file="../Guest/Head.jsp" %>
+    <%@include file="Head.jsp" %>
     <body>
          <%
             if (request.getParameter("aid") != null) {
@@ -32,7 +32,7 @@
             }
             
          %>
-         
+         <div class="content-wrapper">
          <table  border="2" align="center">
                 <tr>
                     <th>Sl no</th>
@@ -80,6 +80,7 @@
                 }
               %>
             </table>
+         </div>
     </body>
 </html>
 <%@include file="../Guest/Foot.jsp" %>

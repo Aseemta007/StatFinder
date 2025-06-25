@@ -7,7 +7,10 @@ and open the template in the editor.
     Created on : May 21, 2024, 3:15:36 PM
     Author     : ANANTHU
 */
-
+  .content-wrapper {
+    max-height: calc(100vh - 200px); /* Adjust based on your layout */
+    overflow: auto; /* Allows scrolling if content exceeds max height */
+}
 .rating {
   display: flex;
   align-items: center;

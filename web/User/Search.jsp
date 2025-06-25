@@ -14,7 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Search</title>
         <link rel="stylesheet" href="../Assets/Templates/Main/css/footstyle2.css">
-        <link rel="stylesheet" href="../Assets/Templates/Main/css/prodreg.css">
+        <link rel="stylesheet" href="../Assets/Templates/Main/css/prodreg_1.css">
     </head>
     <%@include file="Userhead.jsp" %>
     <body onload="getProd()">
@@ -59,10 +59,10 @@
     <div class="formbold-input-flex">
             <div>
         <label for="selLoc" class="formbold-form-label">
-            Location
+            Thaluk
             </label>
   <select name="location" id="selLoc" onchange="getProd()"class="formbold-form-input" >
-    <option value="">----select Location----</option>
+    <option value="">----select Thaluk----</option>
   </select>
             </div>
             </div>
@@ -119,6 +119,7 @@
      </form>
   </div>
 </div> 
+    <div class="content-wrapper">
                             <div class="container my-4">
         <div class="text-center mb-4">
             <h1 id="h2e">Products</h1>
@@ -126,6 +127,7 @@
         <div class="row" id="dataT">
             Hii
         </div>
+    </div>
     </div>
 
     </body>

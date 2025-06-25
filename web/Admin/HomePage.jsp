@@ -38,7 +38,7 @@
       <!-- fonts -->
       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;800&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
    </head>
-   <%@include file="../Guest/Head.jsp" %>
+   <%@include file="Head.jsp" %>
    <body>
       <!-- services section start -->
       <div class="services_section layout_padding">
@@ -129,24 +129,7 @@
                </div>
                 
                 <div class="row" >
-                  <div class="col-lg-3 col-sm-6">             
-                     <div class="box_main">
-                         <a href="reviewverification.jsp">
-                        <div class="service_img"><img src="../Assets/Templates/Main/img/reviewverification.png"></div>
-                        <h4 class="development_text">Review Verification</h4>
-                        <p class="services_text"></p>
-                         </a>
-                     </div>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                     <div class="box_main">
-                         <a href="ComplaintVerification.jsp">
-                        <div class="service_img"><img src="../Assets/Templates/Main/img/Comdis.png"></div>
-                        <h4 class="development_text">Complaint Verification</h4>
-                        <p class="services_text"></p>
-                        </a>
-                     </div>
-                  </div>
+                  
                   <div class="col-lg-3 col-sm-6">
                      <div class="box_main">
                          <a href="Complaintaction.jsp">
@@ -161,6 +144,15 @@
                          <a href="Feedbackdisplay.jsp">
                         <div class="service_img"><img src="../Assets/Templates/Main/img/feedback.png"></div>
                         <h4 class="development_text">Feedback Display</h4>
+                        <p class="services_text"></p>
+                         </a>
+                     </div>
+                  </div>
+                    <div class="col-lg-3 col-sm-6">
+                     <div class="box_main">
+                         <a href="../Guest/Login.jsp">
+                        <div class="service_img"><img src="../Assets/Templates/Main/img/Logout.png"></div>
+                        <h4 class="development_text">Logout</h4>
                         <p class="services_text"></p>
                          </a>
                      </div>

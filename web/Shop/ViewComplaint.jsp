@@ -26,7 +26,7 @@
     <body>
         <div align="center" id="h2e">
  <h2>New Complaints</h2>
-                                    <!-- table-responsive -->
+                                    <div class="content-wrapper"><!-- table-responsive -->
                                     <table>
                                         <thead>
                                             <tr >
@@ -60,6 +60,7 @@
 
                                         </tbody>
                                     </table>
+                                    </div>
                                
                                 <%                                    if (request.getParameter("up") != null) {
                                 %>
@@ -103,7 +104,7 @@
 
                                 %>
                                        <br><br> <h2>Replied Complaints</h2>
-                        
+                        <div class="content-wrapper">
                                     <!-- table-responsive -->
                                     <table>
                                         <thead>
@@ -141,6 +142,8 @@
                                         </tbody>
                                     </table>
                                             </div>
+        </div>
+    
                                             
     </body>
     <%@include file="../Guest/Foot.jsp" %>

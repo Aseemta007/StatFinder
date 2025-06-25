@@ -20,6 +20,7 @@
     <body>
         <div align="center" id="h2e">
         <h2>Reviews</h2>
+        <div class="content-wrapper">
         <table border="1" align="center">
                 <tr>
                     <th>Sl.No</th>
@@ -47,6 +48,7 @@
                 }
               %>
             </table>
+        </div>
                 
     </body>
     <%@include file="../Guest/Foot.jsp" %>

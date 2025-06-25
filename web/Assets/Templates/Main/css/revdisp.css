@@ -18,6 +18,10 @@ body {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
+.content-wrapper {
+    max-height: calc(100vh - 200px); /* Adjust based on your layout */
+    overflow: auto; /* Allows scrolling if content exceeds max height */
+}
 
             table {
               border-collapse: collapse;

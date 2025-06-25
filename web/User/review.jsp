@@ -98,7 +98,7 @@
   </div>
 </div>
                         <h3 align="center">Replied Complaints</h3><br>
-                        
+                        <div class="content-wrapper">
                                     <!-- table-responsive -->
                                     <table>
                                         <thead>
@@ -133,6 +133,7 @@
 
                                         </tbody>
                                     </table>
+                        </div>
     </body>
 </html>
 <%@include file="../Guest/Foot.jsp" %>

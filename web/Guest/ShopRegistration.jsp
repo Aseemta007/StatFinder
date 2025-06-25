@@ -166,10 +166,10 @@
         <div class="formbold-input-flex">
             <div>
         <label for="location" class="formbold-form-label">
-            Location
+            Thaluk
             </label>
   <select name="location" id="selLoc" class="formbold-form-input" >
-    <option value="null">----select Location----</option>
+    <option value="null">----select Thaluk----</option>
   </select>
             </div>
             </div>

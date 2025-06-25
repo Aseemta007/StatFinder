@@ -26,7 +26,7 @@
                 
         <div align="center" id="h2e">
         <h2>Image Gallery</h2>
-         
+         <div class="content-wrapper">
         <form method="post">
         <table border="3" align="center">
                
@@ -55,6 +55,7 @@
              </table>
         </form>
              </div> 
+        </div>
     </body>
     <%@include file="../Guest/Foot.jsp" %>
 </html>

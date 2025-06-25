@@ -15,7 +15,10 @@ body {
     background-size: cover;
   background-position: center center;
             }
-
+.content-wrapper {
+    max-height: calc(100vh - 200px); /* Adjust based on your layout */
+    overflow: auto; /* Allows scrolling if content exceeds max height */
+}
             #h2e h2{
                  border-collapse: collapse;
   margin: 0 auto;

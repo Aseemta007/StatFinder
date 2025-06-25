@@ -8,7 +8,7 @@
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>Our Stationery Finder System connects you with real-time inventory information for stationery items in nearby stores, helping you save time and find what you need effortlessly. Supporting local businesses, we make it easy for you to compare products, check availability, and plan your shopping trip with confidence</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -20,23 +20,10 @@
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Links</h2>
               <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Development</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Business Strategy</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Graphic Design</a></li>
+                <li><a href="../index.html#hero"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+                <li><a href="../index.html#about"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+                <li><a href="../index.html#services"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
+                <li><a href="../index.html#contact"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
               </ul>
             </div>
           </div>
@@ -45,9 +32,9 @@
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">College JN,Muvattupuzha,Ernakulam 686661</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">8********1</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">statfinder@example.com</span></a></li>
 	              </ul>
 	            </div>
             </div>
